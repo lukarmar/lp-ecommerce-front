@@ -29,7 +29,7 @@ export function Card({productId, title, brand, defaultPrice, percentage, discoun
 
 
   return (
-    <Flex w="full" pos="relative" shadow="lg" border="1px" borderColor="#ecf0f1">
+    <Flex w={{ base: "sm", md: "full" }} pos="relative" shadow="lg" border="1px" borderColor="#ecf0f1">
       <Flex  direction={"column"} w="full" bg="white">
         <Flex w="full" pos="relative">
           <SliderImageCTA images={images}/>
