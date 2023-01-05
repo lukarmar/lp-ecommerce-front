@@ -20,21 +20,26 @@ const Footer = () => {
       <Flex
         direction="column"
         align={{ base: "flex-start", sm: "center" }}
-        px={{ base: 6, md: 16 }}
-        py={20}
-        pb={32}
+        justify="center"
+        // px={{ base: 6, md: 16 }}
+        // py={20}
         maxW="1440px"
         pos="relative"
       >
         <Flex direction="column" align="center" w="full" mb={14}>
           <Flex w="full" justify={"center"} maxW={96}>
-            <Image src={logoFooter} height={100} width={100} alt="Lofo MetaCore" priority />
+            <Image 
+              src={logoFooter}
+              height={70} 
+              width={70} 
+              alt="Logo" 
+              priority />
           </Flex>
           <Text
             as="span"
             w="full"
             maxW="600px"
-            fontSize={16}
+            fontSize={{base: 14, md: 20 }}
             color="#cccccc"
             textAlign="center"
             mt={4}
