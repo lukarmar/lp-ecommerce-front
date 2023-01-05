@@ -12,6 +12,7 @@ interface PropSliderImage {
   images: string[]
 }
 
+
 const SliderImageCTA = ({ images }: PropSliderImage) => {
   return (
     <Flex
@@ -20,7 +21,8 @@ const SliderImageCTA = ({ images }: PropSliderImage) => {
           display: "flex",
           width: "100%",
           height: "100%",
-          // maxWidth: "420px",
+          pos: "relative",
+          // maxWidth: "480px",
         },
         ".swiper-slide": {
           display: "flex",
@@ -33,15 +35,15 @@ const SliderImageCTA = ({ images }: PropSliderImage) => {
 
         ".swiper-slide img": {
           display: "flex",
-          width: "100",
-          height: "100%",
+          width: "100% !important",
+          height: "100% !important",
           objectFit: "cover",
           objectPosition: "top",
         },
 
         ".swiper-pagination": {
           left: "10px",
-          top: "10px",
+          bottom: "10px",
           width: "auto !important",
           height: "30px",
           padding: "2px 10px",
@@ -52,7 +54,8 @@ const SliderImageCTA = ({ images }: PropSliderImage) => {
 
       }}
     >
-      <Swiper pagination={{ 
+      <Swiper 
+        pagination={{ 
           type: "fraction",
           renderFraction(currentClass, totalClass) {
               return '<span class="' + currentClass + '"></span>' +
@@ -60,18 +63,17 @@ const SliderImageCTA = ({ images }: PropSliderImage) => {
                     '<span class="' + totalClass + '"></span>';
           },
           enabled:  true
-          }} >
+          }}>
            {images.map((image, index, arr) => (
             <SwiperSlide key={(index * (Math.random() * arr.length)).toString()}>
-              <Flex h="full" w="full">
-              {!image ? <Skeleton w="full" h="420px" /> :
+              <Flex h="full" w="full" minH="320px" justify="center" align="center" bg="gray.100">
+              {!image ? <Skeleton w="480px" h="320px" /> :
                 <Image
                   src={image}
                   alt="Images Default"
-                  height={420}
-                  width={720}
-                  objectFit="cover"
-                  
+                  width={480}
+                  height={320}
+                  loading="eager"
                   />
                 }
                 </Flex>

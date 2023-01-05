@@ -41,11 +41,10 @@ const Hero = () => {
       >
       { isLoading ? <DotLoader size={180} color="#222f3e"/> :
         <Grid
-           templateColumns={{
-            base: "repeat(1, 1fr)",
-            md: "repeat(2, 2fr)",
-            lg: "repeat(3, 1fr)",
-
+          templateColumns={{
+          base: "repeat(1, 1fr)",
+          md: "repeat(2, 2fr)",
+          lg: "repeat(3, 1fr)",
            }}
            gap={10}
            rowGap={14}

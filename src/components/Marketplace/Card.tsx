@@ -29,7 +29,7 @@ export function Card({productId, title, brand, defaultPrice, percentage, discoun
 
 
   return (
-    <Flex w={{ base: "sm", md: "full" }} pos="relative" shadow="lg" border="1px" borderColor="#ecf0f1">
+    <Flex w="full" h="full" pos="relative" shadow="lg" border="1px" borderColor="#ecf0f1">
       <Flex  direction={"column"} w="full" bg="white">
         <Flex w="full" pos="relative">
           <SliderImageCTA images={images}/>
@@ -38,7 +38,7 @@ export function Card({productId, title, brand, defaultPrice, percentage, discoun
             <Text fontSize={21}>OFF</Text>
           </Flex>
         </Flex>
-        <Flex direction="column" px="5">
+        <Flex direction="column" h="full" px="5">
           <HStack mt="5" spacing="3">
               <Tag variant="outline">
                 {category}
@@ -72,10 +72,11 @@ export function Card({productId, title, brand, defaultPrice, percentage, discoun
             <Text as="span" fontSize="2xl" fontWeight="bold" color="#e84118">{discountPrice}</Text>
             <Text as="del" fontSize="xl" fontWeight="light" color="#718093">{defaultPrice}</Text>
           </Flex>
-          <Center my="6" w="full">
-            <Button colorScheme="green" w="full">Compre agora</Button>
-          </Center>
         </Flex>
+        
+        <Center my="6" w="full" px="5">
+          <Button colorScheme="green" w="full">Compre agora</Button>
+        </Center>
       </Flex>
     </Flex>
   );
